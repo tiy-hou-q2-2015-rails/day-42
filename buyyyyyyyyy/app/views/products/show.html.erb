@@ -1,0 +1,14 @@
+<h1><%= @product.name %></h1>
+
+<div class="col-xs-8">
+  <%= image_tag @product.photo, class: "img-responsive img-thumbnail" %>
+</div>
+<div class="col-xs-4">
+  <h3><%= @product.name %></h3>
+  <dl>
+    <dt>Price</dt>
+    <dd><%= number_to_currency (@product.price / 100.0) %>
+  </dl>
+
+  <%= render 'payola/transactions/checkout', sellable: @product, button_text: "Buyyyyyyyyy Now", button_class: "btn btn-lg btn-primary", product_image_path: @product.photo %>
+</div>
